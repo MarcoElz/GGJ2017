@@ -49,6 +49,6 @@ public class Shoot : MonoBehaviour {
 
         //Instantiate misil and look at mouse position
         GameObject misilObject = Instantiate(misil, misilShooter.transform.position, Quaternion.identity) as GameObject;
-        misilObject.transform.LookAt(pos);   
+        misilObject.GetComponent<Misil>().SetTarget(pos);  
     }
 }

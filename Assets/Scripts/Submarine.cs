@@ -30,7 +30,7 @@ public class Submarine : MonoBehaviour {
         {
             health = 0;
             isDead = true;
-            //GAME OVER //Game Over
+            GameMaster.instance.GameOver(); //Game Over
         }
         
     }
