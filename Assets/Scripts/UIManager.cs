@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour {
     public Image healthBar;
     public Text score;
 
+    public Text highScore;
+    public Text lastScore;
+
     void Start()
     {
         gameOverStuff.SetActive(false);
@@ -38,6 +41,8 @@ public class UIManager : MonoBehaviour {
     {
         Animator blackScreenAnimator = blackScreen.GetComponent<Animator>();
         blackScreenAnimator.SetTrigger("FadeIn");
+        highScore.text = "Highscore: " + GameMaster.instance.highscore.ToString("0000000");
+        lastScore.text = "Your score: " + score.text;
         //TimeScale
         Time.timeScale = 0;
     }

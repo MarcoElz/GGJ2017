@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour {
 
     public int score;
 
-    private int highscore;
+    public int highscore;
 
     void Awake()
     {
