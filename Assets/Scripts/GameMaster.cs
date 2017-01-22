@@ -9,6 +9,8 @@ public class GameMaster : MonoBehaviour {
 
     public int score;
 
+    private int highscore;
+
     void Awake()
     {
         if (instance == null)
@@ -22,11 +24,17 @@ public class GameMaster : MonoBehaviour {
     {
         isGameOver = false;
         score = 0;
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
     }
         
     public void GameOver()
     {
         Debug.Log("Game Over");
+        if (score > highscore)
+        {
+            PlayerPrefs.SetInt("Highscore", score);
+        }
+        UIManager.instance.ShowGameOver();
     }
 
 

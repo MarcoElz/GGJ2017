@@ -6,11 +6,15 @@ public class UIManager : MonoBehaviour {
    
     public static UIManager instance;
 
+    public GameObject gameOverStuff;
+    public GameObject blackScreen;
+
     public Image healthBar;
     public Text score;
 
     void Start()
     {
+        gameOverStuff.SetActive(false);
         UpdateHealth(100);
 
         if (instance == null)
@@ -27,6 +31,13 @@ public class UIManager : MonoBehaviour {
     public void UpdateScore(int actualScore)
     {
         score.text = actualScore.ToString("0000000");
+    }
+
+    public void ShowGameOver()
+    {
+        Animator blackScreenAnimator = blackScreen.GetComponent<Animator>();
+        blackScreenAnimator.SetTrigger("FadeIn");
+        //TimeScale
     }
 
 }
