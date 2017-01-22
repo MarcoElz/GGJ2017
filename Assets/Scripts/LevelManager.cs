@@ -110,7 +110,7 @@ public class LevelManager : MonoBehaviour {
         boss.SetActive(true);
 
         //MovePlayer
-        Vector3 newPos = new Vector3(7.0f, 4.5f, 0.0f);
+        Vector3 newPos = new Vector3(7.0f, 5.5f, 0.0f);
         player.transform.position = newPos;
         UIManager.instance.blackScreen.GetComponent<Animator>().SetTrigger("FadeOutBoss");
         player.GetComponent<Submarine>().canTakeDamage = true;
