@@ -29,19 +29,19 @@ public class GameMaster : MonoBehaviour {
         Debug.Log("Game Over");
     }
 
-    void Update()
+
+    void FixedUpdate()
     {
         if (isGameOver)
             return;
-
-        //AddScore((int)Time.deltaTime * 1000);
-        AddScore((int)Time.deltaTime * 10);
-            
+        
+        AddScore(1);
     }
 
     public void AddScore(int addScore)
     {
         score += addScore;
+        score = Mathf.Clamp(score, 0, 9999999);
         UIManager.instance.UpdateScore(score);
     }
 
