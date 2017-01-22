@@ -14,7 +14,7 @@ public class BackgroundCamera : MonoBehaviour {
     {
         minX = 5.0f;
         maxX = 50.0f;
-        speed = 0.25f;
+        speed = 0.4f;
         //speed = 1;
 	
 	}

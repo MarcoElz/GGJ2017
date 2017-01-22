@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour {
         StartCoroutine(SpawnMissiles());
         StartCoroutine(SpawnEnemies());
 
-        if (numberOfPastWaves == 3)
+        if (numberOfPastWaves == 4)
             numberOfEnemies = 2;
         //else if (numberOfPastWaves == 6)
         //    numberOfEnemies = 3;
@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour {
     IEnumerator BeginBoss()
     {
         UIManager.instance.blackScreen.GetComponent<Animator>().SetTrigger("BossIn");
-        numberOfEnemies = 3;
+        //numberOfEnemies = 3;
         yield return new WaitForSeconds(0.6f);
         firstBg.SetActive(false);
         bossBG.SetActive(true);
