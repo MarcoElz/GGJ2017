@@ -9,18 +9,23 @@ public class Submarine : MonoBehaviour {
     private int initialHealth;  //Initial health
     private bool isDead;    //is player dead?
 
+    public bool canTakeDamage;
+
 	// Use this for initialization
 	void Start () 
     {
         initialHealth = 100;
         health = initialHealth;
         isDead = false;
+        canTakeDamage = true;
 	
 	}
 
     //Reduce the actual health
     public void TakeDamage(int damage)
     {
+        if (!canTakeDamage)
+            return;
         //If player isn't dead take damage
         if (!isDead)
         {
@@ -35,8 +40,9 @@ public class Submarine : MonoBehaviour {
         if (health <= 0)
         {
             health = 0;
-            isDead = true;
+            isDead = true; 
             GameMaster.instance.GameOver(); //Game Over
+            Destroy(this);
         }
         
     }

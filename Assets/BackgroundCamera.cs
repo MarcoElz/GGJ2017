@@ -8,12 +8,14 @@ public class BackgroundCamera : MonoBehaviour {
 
     private float speed;
 
+
 	// Use this for initialization
 	void Start () 
     {
         minX = 5.0f;
-        maxX = 24.0f;
-        speed = 0.25f;
+        maxX = 50.0f;
+        //speed = 0.25f;
+        speed = 1;
 	
 	}
 	
@@ -23,6 +25,5 @@ public class BackgroundCamera : MonoBehaviour {
         Vector3 actualPos = this.transform.position;
         Vector3 clampedPos = new Vector3(Mathf.Clamp(actualPos.x, minX, maxX), actualPos.y, actualPos.z);
         transform.position = clampedPos;
-	
 	}
 }

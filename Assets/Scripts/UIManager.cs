@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour {
 
     public Text highScore;
     public Text lastScore;
+    public Text gameStatus;
 
     void Start()
     {
@@ -37,14 +38,14 @@ public class UIManager : MonoBehaviour {
         score.text = actualScore.ToString("0000000");
     }
 
-    public void ShowGameOver()
+    public void ShowGameOver(string gameStatusString)
     {
         Animator blackScreenAnimator = blackScreen.GetComponent<Animator>();
         blackScreenAnimator.SetTrigger("FadeIn");
         highScore.text = "Highscore: " + GameMaster.instance.highscore.ToString("0000000");
         lastScore.text = "Your score: " + score.text;
-        //TimeScale
-        Time.timeScale = 0;
+        gameStatus.text = gameStatusString;
+
     }
 
 
