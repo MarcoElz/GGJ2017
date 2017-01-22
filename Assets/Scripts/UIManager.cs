@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
    
@@ -38,6 +39,20 @@ public class UIManager : MonoBehaviour {
         Animator blackScreenAnimator = blackScreen.GetComponent<Animator>();
         blackScreenAnimator.SetTrigger("FadeIn");
         //TimeScale
+        Time.timeScale = 0;
+    }
+
+
+    public void Retry()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Menu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
     }
 
 }
