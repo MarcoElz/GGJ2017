@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour {
         if (other.gameObject.tag.Equals(TAG_PLAYERMISSIL))
         {
             Destroy(this.gameObject);
+            GameMaster.instance.AddScore(1000);
         }
     }
 

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Submarine : MonoBehaviour {
 
+    public SpriteRenderer sprite;
+
     public int health;  //Actual Health
     private int initialHealth;  //Initial health
     private bool isDead;    //is player dead?
@@ -24,6 +26,9 @@ public class Submarine : MonoBehaviour {
         {
             health -= damage;
             UIManager.instance.UpdateHealth(health);
+            StopAllCoroutines();
+            sprite.enabled = true;
+            StartCoroutine(DamageEffect());
         }
 
         //If health is zero or below zero, then is dead.
@@ -34,5 +39,24 @@ public class Submarine : MonoBehaviour {
             GameMaster.instance.GameOver(); //Game Over
         }
         
+    }
+
+    IEnumerator DamageEffect()
+    {
+        sprite.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = true;
     }
 }

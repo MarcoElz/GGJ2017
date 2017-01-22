@@ -36,7 +36,7 @@ public class Misil : MonoBehaviour {
         Transform sprite = GetComponentInChildren<SpriteRenderer>().gameObject.transform;
         sprite.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         Vector3 newRotation = sprite.rotation.eulerAngles;
-        newRotation.z += 90.0f;
+        //newRotation.z += 90.0f;
         sprite.eulerAngles = newRotation;
     }
 }
