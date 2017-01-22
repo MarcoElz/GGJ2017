@@ -4,6 +4,7 @@ using System.Collections;
 public class GameMaster : MonoBehaviour {
 
     public GameObject backgroundCamera;
+    public AudioManager audio;
 
     public static GameMaster instance;
 
@@ -91,6 +92,7 @@ public class GameMaster : MonoBehaviour {
 
     public void FinishFirstRound()
     {
+        audio.BeginBossMusic();
         player.GetComponent<Submarine>().canTakeDamage = false;
         LevelManager.instance.BossFight();
     }
