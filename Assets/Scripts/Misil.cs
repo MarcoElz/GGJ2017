@@ -3,15 +3,13 @@ using System.Collections;
 
 public class Misil : MonoBehaviour {
 
-    private float speed;    //Speed of the missil
-    private float addSpeed; //Speed that will be add
+    public float speed;    //Speed of the missil
+    public float addSpeed; //Speed that will be add
     private Vector3 movement;
 
 	// Use this for initialization
 	void Awake () 
     {
-        speed = 1.0f;
-        addSpeed = 0.5f;
         movement = Vector3.down;
 
 	}
