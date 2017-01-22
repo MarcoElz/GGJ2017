@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour {
     IEnumerator BeginBoss()
     {
         UIManager.instance.blackScreen.GetComponent<Animator>().SetTrigger("BossIn");
-        numberOfEnemies = 5;
+        numberOfEnemies = 3;
         yield return new WaitForSeconds(0.6f);
         firstBg.SetActive(false);
         bossBG.SetActive(true);
