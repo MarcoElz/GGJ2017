@@ -23,6 +23,7 @@ public class Submarine : MonoBehaviour {
         if (!isDead)
         {
             health -= damage;
+            UIManager.instance.UpdateHealth(health);
         }
 
         //If health is zero or below zero, then is dead.
